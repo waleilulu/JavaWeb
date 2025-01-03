@@ -1,0 +1,14 @@
+-- 修改商品資料
+select * from product;
+update product set product_name = '阿薩姆紅茶' where product_id = 101;
+update product set price = 12, qty = 22 where product_id = 101 or product_id = 102; /*方法1: 將商品 ID 為 101 和 102 的商品的價格更新為 12，庫存量更新為 22。*/
+/*	
+	方法2: 
+	如果以上語法不理解，分開執行兩句也可以:
+	update product set price = 10, qty = 22 where product_id = 101;
+        update product set price = 10, qty = 22 where product_id = 102;
+*/
+
+update product set price = 13, qty = 23 where product_id in (101, 102); /*方法3，用in ()可以連續寫很多個，最方便的方式*/
+update product set price = 15, qty = 25 where product_id = 102;
+select * from product;

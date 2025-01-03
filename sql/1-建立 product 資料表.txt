@@ -1,0 +1,7 @@
+-- 建立商品表
+create table if not exists product(
+	product_id int primary key comment '商品ID', /*建立product_id，型態為int，且設為主鍵，標記為商品ID*/
+    product_name varchar(50) not null unique comment '商品名稱', /*建立product_name，型態為varchar(50)，不可為空值，且商品名稱不可重複，標記為商品名稱*/
+    price int not null comment '商品價格', /*建立price，型態為int，不可為空值，標記為商品價格*/
+    qty int default 0 comment '商品庫存' /*建立qty，型態為int，預設為0，標記為商品庫存*/
+);

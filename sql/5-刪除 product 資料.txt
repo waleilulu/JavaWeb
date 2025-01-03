@@ -1,0 +1,11 @@
+-- 刪除商品資料
+delete from product; /*MySQL這個有保護機制，不讓刪除資料*/
+truncate table product; /*可以使用這個語法，強制刪除資料，只留下表格*/
+delete from product limit 1000; /*又或者可以使用這個，限制刪除的行數，最多刪除 1000 行*/
+
+delete from product where product_id = 101;
+delete from product where qty = 0 limit 1000;
+select * from product;
+
+-- 直接刪除表格
+drop table product; /*又或者對著左欄(Navigator)中的product右鍵drop table，如果刪除了表格就不能插入或修改資訊，需要重新建立表格(create table)*/
